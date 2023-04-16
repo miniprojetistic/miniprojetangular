@@ -1,0 +1,94 @@
+<div class="container-fluid mt-5">
+    <div class="row">
+        <div class="logo col-md-3 img-fluid">
+            <a routerLink="/marketplace"><img src="http://localhost:4200/assets/Screenshot_2023-02-22_at_13-58-29_Logo_Maker___Brand_Builder-removebg-preview.png" alt="Logo"width=300 height="200">
+            </a>
+        </div>
+        <div class="search-bar col-md-5 text-center">
+            <input class="form-control form-control-md"type="text" placeholder="Search">
+        </div>
+        <div class="col-md-1"></div>
+        <div class="sell-car-button col-md-2"> 
+            <a routerLink="/addcarmodify">
+                <button class=" form-control btn btn-dark ">Sell a car</button>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="menu col-md-2 my-5">
+            <ul>
+                <li class="mb-3"id="carMarketlink"><a routerLink="/marketplace"><img src="http://localhost:4200/assets/Vector.png" alt=""> Car Market</a></li>
+                <li id="sellCarlink"><a routerLink="/addcarmodify"><img src="http://localhost:4200/assets/vuesax-linear-empty-wallet-time.png" alt=""> Sell a Car</a></li>
+            </ul>
+        </div>
+        <div class="formulaire col-md-8 mt-5">
+            <div class="h2">Add or modify car</div>
+            <form class="border border-3 rounded border-dark p-5">
+                <div class="car-type">
+                    <label for="type-vehicle">Type of vehicle</label>
+                    <select class="bg-light border-light border m-3" id="type-vehicle">
+                        <option value="">Car Type</option>
+                        <option value="auto">Auto</option>
+                        <option value="mechanic">Mechanic</option>
+                    </select>
+                </div>
+                <div class="car-state">
+                    <label for="state-vehicle">State of the car</label>
+                    <select class="bg-light border-light border m-3" id="state-vehicle">
+                        <option value="">Car State</option>
+                        <option value="used">Used</option>
+                        <option value="new">New</option>
+                    </select>
+                </div>
+                <div class="car-brand">
+                    <label for="brand-vehicle">Car brand</label><input class="form-control form-control-md"type="text" id="brand-vehicle"placeholder="Volkswagen/Toyota..">
+                </div>
+                <div class="car-model">
+                    <label for="model-vehicle">Car model</label><input class="form-control form-control-md"type="text" id="model-vehicle"placeholder="Golf 7/Camry...">
+                </div>
+                <div class="car-fuel">
+                    <label for="fuel">Type of fuel</label>
+                    <select class="bg-light border-light border m-3"id="fuel">
+                        <option value="">Car Fuel</option>
+                        <option value="diesel">Diesel</option>
+                        <option value="gas">Gas</option>
+                    </select>
+                </div>
+                <div class="car-mileage">
+                    <label for="car-mileage">Mileage</label><input class="form-control form-control-md"type="text"id="car-mileage"placeholder="in km">
+                </div>
+                <div class="car-max-speed">
+                    <label for="car-max">Max speed</label><input class="form-control form-control-md"type="text"id="car-max" placeholder="in km/h">
+                </div>
+                <div class="car-color">
+                    <label for="car-col">Color</label><input class="form-control form-control-md"type="text"id="car-col" placeholder="Blue / Green">
+                </div>
+                <div class="car-price">
+                    <label for="car-price">Price</label><input class="form-control form-control-md"type="text"id="car-price"placeholder="in euros">
+                </div>
+                <div class="car-year">
+                    <label for="car-year">Year</label><input class="form-control form-control-md"type="text"id="car-year">
+                </div>
+                <div class="car-location">
+                    <label for="car-location">Location</label><input class="form-control form-control-md"type="text"id="car-location"placeholder="Tunisia">
+                </div>
+                <div class="car-phone-number">
+                    <label for="car-phone-num">Phone number</label><input class="form-control form-control-md"type="text"id="car-phone-num"placeholder="66-666-666">
+                </div>
+
+                <div class="car-img">
+                    <label for="car-image">Link to the image of your car(use Google images)</label><input type="text" class="form-control form-control-md " id="car-image" placeholder="image.jpg or image.png">
+                </div>
+                <div class="row mt-3 mb-5">
+                    <button id="sendBtn" class="btn btn-dark btn-md col-md-2">Send</button>
+                    <div class="col-md-8"></div>
+                    <button id="clearBtn" class="btn btn-dark btn-md col-md-2">Clear</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>

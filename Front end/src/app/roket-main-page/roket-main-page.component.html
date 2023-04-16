@@ -1,0 +1,120 @@
+<div class="top mt-5">
+    <div class="row">
+        <div class="logo col-md-3 img-fluid">
+            <a routerLink="/marketplace"><img src="http://localhost:4200/assets/Screenshot_2023-02-22_at_13-58-29_Logo_Maker___Brand_Builder-removebg-preview.png" alt="Logo"width=300 height="200"></a>
+        </div>
+        <div class="search-bar col-md-5 text-center">
+            <input class="form-control form-control-md"type="text" placeholder="Search" name="search" [(ngModel)]="search"(input)="searchFunction()">
+        </div>
+        <div class="col-md-1"></div>
+        <div class="sell-car-button col-md-2"> 
+            <a routerLink="/addcarmodify">
+                <button class=" form-control btn btn-dark ">Sell a car</button>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="menu col-md-2 mt-5">
+            <ul>
+                <li class="mb-3"id="carMarketlink"><a routerLink="/marketplace"><img src="http://localhost:4200/assets/Vector.png" alt=""> Car Market</a></li>
+                <li id="sellCarlink"><a routerLink="/addcarmodify"><img src="http://localhost:4200/assets/vuesax-linear-empty-wallet-time.png" alt=""> Sell a Car</a></li>
+            </ul>
+        </div>
+        
+        <div class="carshowcase-container col-md-7">
+            <div class="row">
+                <h1 class="col-8">Car Market of Tunisia</h1>
+                <select class="col-3 mx-1 bg-light border-light border" name="sorting" [(ngModel)]="sorting" (change)="onSelectChange()">
+                    <option value="">Sort by</option>
+                    <option value="priceup">Price:Low to High</option>
+                    <option value="pricedown">Price:High to Low</option>
+                </select>
+            </div>
+            <div class="row mt-5">
+                <div class="car-box col-md-4" *ngFor="let car of cars">
+                    <a routerLink="/marketplace/{{car.id}}">
+                    <div class="car-img img-fluid"><img src="{{car.carimg}}" alt=""></div>
+                    <div class="car-model h3">{{car.model}}</div>
+                    <div class="car-price h4">Price : {{car.price}} €</div>
+                    <div class="separation"></div>
+                    <div class="car-mileage"><img src="http://localhost:4200/assets/kilometrage.png" alt="">{{car.mileage}}km</div>
+                    <div class="car-location"><img src="http://localhost:4200/assets/location.png" alt="">{{car.location}}</div>
+                    <div class="car-type"><img src="http://localhost:4200/assets/autoormechanic.png" alt="">{{car.type}}</div>
+                    <div class="car-fuel"><img src="http://localhost:4200/assets/fuel.png" alt="">{{car.fuel}}</div>
+                </a>
+                <a routerLink="/addcarmodify"><button class="btn btn-md border border-dark"id="modifyBtn">Modify</button></a>
+                <button class="btn btn-md border border-dark"id="deleteBtn">Delete</button>
+                </div>
+            </div>
+        </div>
+        <div class="car-filters col-md-2">
+            <h3>Filters</h3>
+            <form id="myForm" (ngSubmit)="onSubmit()">
+                <div class="car-state mb-3 row">
+                        <label for="state-vehicle">State of the car</label>
+                        <select class="bg-light border-light border m-3" id="state-vehicle" name="state" [(ngModel)]="state">
+                            <option value="">Car State</option>
+                            <option value="used">Used</option>
+                            <option value="new">New</option>
+                        </select>
+                </div>
+                <div class="car-type">
+                    <label for="type-vehicle">Type of vehicle</label>
+                    <select class="bg-light border-light border m-3"id="type-vehicle" name="type" [(ngModel)]="type">
+                        <option value="">Car Type</option>
+                        <option value="auto">Auto</option>
+                        <option value="mechanic">Mechanic</option>
+                    </select>
+                </div>
+                <div class="car-brand">
+                    <label for="brand-vehicle">Car brand</label><input class="form-control form-control-md"type="text" id="brand-vehicle" name="brand" [(ngModel)]="brand">
+                </div>
+                <div class="car-model">
+                    <label for="model-vehicle">Car model</label><input class="form-control form-control-md"type="text" id="model-vehicle" name="model" [(ngModel)]="model">
+                </div>
+                <div class="car-price">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <label for="price-from">Price from</label><input class="form-control form-control-md"type="text" id="price-from" name="priceFrom" [(ngModel)]="priceFrom">
+                        </div>
+                        <div class="col-md-2"></div>
+                        <div class="col-md-5">
+                            <label for="price-to">Price to</label><input class="form-control form-control-md"type="text" id="price-to"name="priceTo" [(ngModel)]="priceTo">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="car-year row">
+                    <div class="col-md-5">
+                        <label for="year-from">Year from</label><input class="form-control form-control-md"type="text" id="year-from" name="yearFrom" [(ngModel)]="yearFrom"></div>
+                    <div class="col-md-2"></div>
+                    <div class="col-md-5">
+                        <label for="year-to">Year to</label><input class="form-control form-control-md" type="text" id="year-to" name="yearTo" [(ngModel)]="yearTo"></div>
+                </div>
+                
+                <label for="car-mileage">Mileage</label><input class="form-control form-control-md"type="text"id="car-mileage" name="mileage" [(ngModel)]="mileage">
+                <div class="car-fuel">
+                    <label for="fuel">Type of fuel</label>
+                    <select class="bg-light border-light border m-3"id="fuel" name="fuel" [(ngModel)]="fuel">
+                        <option value="">Car Fuel</option>
+                        <option value="diesel">Diesel</option>
+                        <option value="gas">Gas</option>
+                    </select>
+                </div>
+
+                <div class="filter-buttons row mt-3">
+                    <div class="col-md-2"></div>
+                    <input type="reset" value="Clear"class="btn btn-dark text-white col-md-3 text-center"id="clearfilter"(click)="ngOnInit()">
+                    <div class="col-md-2"></div>
+                    <button class="btn btn-dark text-white col-md-3"id="applyfilter">Apply</button>
+                    <div class="col-md-2"></div>
+                </div>
+            </form>
+    </div>
+    
+    </div>
+</div>
