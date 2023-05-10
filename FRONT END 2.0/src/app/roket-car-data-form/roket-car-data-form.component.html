@@ -1,0 +1,63 @@
+<form class="border border-3 rounded border-dark p-5" (ngSubmit)="onButtonClicked()">
+    <div class="car-type">
+        <label for="type-vehicle">Type of vehicle</label>
+        <select class="bg-light border-light border m-3" id="type-vehicle" name="type" [(ngModel)]="type">
+            <option value="">Car Type</option>
+            <option value="auto">Auto</option>
+            <option value="mechanic">Mechanic</option>
+        </select>
+    </div>
+    <div class="car-state">
+        <label for="state-vehicle">State of the car</label>
+        <select class="bg-light border-light border m-3" id="state-vehicle" name="state" [(ngModel)]="state">
+            <option value="">Car State</option>
+            <option value="used">Used</option>
+            <option value="new">New</option>
+        </select>
+    </div>
+    <div class="car-brand">
+        <label for="brand-vehicle">Car brand</label><input class="form-control form-control-md"type="text" id="brand-vehicle"placeholder="Volkswagen/Toyota.."name="brand" [(ngModel)]="brand">
+    </div>
+    <div class="car-model">
+        <label for="model-vehicle">Car model</label><input class="form-control form-control-md"type="text" id="model-vehicle"placeholder="Golf 7/Camry..."name="model" [(ngModel)]="model">
+    </div>
+    <div class="car-fuel">
+        <label for="fuel">Type of fuel</label>
+        <select class="bg-light border-light border m-3"id="fuel"name="fuel" [(ngModel)]="fuel">
+            <option value="">Car Fuel</option>
+            <option value="diesel">Diesel</option>
+            <option value="gas">Gas</option>
+        </select>
+    </div>
+    <div class="car-mileage">
+        <label for="car-mileage">Mileage</label><input class="form-control form-control-md"type="text"id="car-mileage"placeholder="in km"name="mileage" [(ngModel)]="mileage">
+    </div>
+    <div class="car-max-speed">
+        <label for="car-max">Max speed</label><input class="form-control form-control-md"type="text"id="car-max" placeholder="in km/h" name="maxspeed" [(ngModel)]="maxspeed">
+    </div>
+    <div class="car-color">
+        <label for="car-col">Color</label><input class="form-control form-control-md"type="text"id="car-col" placeholder="Blue / Green" name="color" [(ngModel)]="color">
+    </div>
+    <div class="car-price">
+        <label for="car-price">Price</label><input class="form-control form-control-md"type="text"id="car-price"placeholder="in euros" name="price" [(ngModel)]="price">
+    </div>
+    <div class="car-year">
+        <label for="car-year">Year</label><input class="form-control form-control-md"type="text"id="car-year" name="year" [(ngModel)]="year">
+    </div>
+    <div class="car-location">
+        <label for="car-location">Location</label><input class="form-control form-control-md"type="text"id="car-location"placeholder="Tunisia" name="location" [(ngModel)]="location">
+    </div>
+    <div class="car-phone-number">
+        <label for="car-phone-num">Phone number</label><input class="form-control form-control-md"type="text"id="car-phone-num"placeholder="66-666-666" name="phoneNumber" [(ngModel)]="phoneNumber">
+    </div>
+
+    <div class="car-img">
+        <label for="car-image">Link to the image of your car(use Google images)</label><input type="text" class="form-control form-control-md " id="car-image" placeholder="image.jpg or image.png" name="imglink" [(ngModel)]="carimg">
+    </div>
+    <div class="row mt-3 mb-5">
+        <button id="sendBtn" class="btn btn-dark btn-md col-md-2">{{buttonText}}</button>
+        <div class="col-md-8"></div>
+        <button id="clearBtn" class="btn btn-dark btn-md col-md-2">Clear</button>
+    </div>
+
+</form>

@@ -1,0 +1,53 @@
+<div class="container-fluid mt-5">
+    <div class="row">
+        <div class="logo col-md-3 img-fluid">
+            <a routerLink="/marketplace"><img src="http://localhost:4200/assets/Screenshot_2023-02-22_at_13-58-29_Logo_Maker___Brand_Builder-removebg-preview.png" alt="Logo"width=300 height="200">
+            </a>
+        </div>
+        <div class="search-bar col-md-5 text-center">
+            <input class="form-control form-control-md"type="text" placeholder="Search">
+        </div>
+        <div class="col-md-1"></div>
+        <div class="sell-car-button col-md-2"> 
+            <a routerLink="/addcarmodify">
+                <button class=" form-control btn btn-dark ">Sell a car</button>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="menu col-md-2 my-5">
+            <ul>
+                <li class="mb-3"id="carMarketlink"><a routerLink="/marketplace"><img src="http://localhost:4200/assets/Vector.png" alt=""> Car Market</a></li>
+                <li id="sellCarlink"><a routerLink="/addcarmodify"><img src="http://localhost:4200/assets/vuesax-linear-empty-wallet-time.png" alt=""> Sell a Car</a></li>
+            </ul>
+        </div>
+        <div class="col-md-10">
+            <p class="h1">{{cars?.model}}</p>
+            <div class="row">
+                <div class="car-img img-fluid col-md-7 ">
+                    <img src="{{cars?.carimg}}" alt="" class="img-fluid border border-1 border-dark rounded col col-md-10" >
+                </div>
+                    <div class="details col-md-3 mx-3 text-center h4">
+                        <p class="display-5 m-3 text-center">Price : {{cars?.price}}$</p>
+                        <p class="h2 text-center">Details</p>
+                        <p>Brand : {{cars?.brand}}</p>
+                        <p>Mileage : {{cars?.mileage}}km</p>
+                        <p>Location : {{cars?.location}}</p>
+                        <p>Type : {{cars?.type}}</p>
+                        <p>Fuel : {{cars?.fuel}}</p>
+                        <p>Color : {{cars?.color}}</p>
+                        <p>State : {{cars?.state}}</p>
+                        <p>Max speed : {{cars?.maxspeed}}km/h</p>
+                        <p>Year : {{cars?.year}}</p>
+                        <p>Phone number : {{cars?.phoneNumber}}</p>
+                    </div> 
+            </div>
+        </div>
+    </div>
+</div>
+

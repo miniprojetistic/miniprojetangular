@@ -1,0 +1,32 @@
+<div class="container-fluid mt-5">
+    <div class="row">
+        <div class="logo col-md-3 img-fluid">
+            <a routerLink="/marketplace"><img src="http://localhost:4200/assets/Screenshot_2023-02-22_at_13-58-29_Logo_Maker___Brand_Builder-removebg-preview.png" alt="Logo"width=300 height="200">
+            </a>
+        </div>
+        <div class="search-bar col-md-5 text-center">
+            <input class="form-control form-control-md"type="text" placeholder="Search">
+        </div>
+        <div class="col-md-1"></div>
+        <div class="sell-car-button col-md-2"> 
+            <a routerLink="/addcarmodify">
+                <button class=" form-control btn btn-dark ">Sell a car</button>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="menu col-md-2 my-5">
+            <ul>
+                <li class="mb-3"id="carMarketlink"><a routerLink="/marketplace"><img src="http://localhost:4200/assets/Vector.png" alt=""> Car Market</a></li>
+                <li id="sellCarlink"><a routerLink="/addcar"><img src="http://localhost:4200/assets/vuesax-linear-empty-wallet-time.png" alt=""> Sell a Car</a></li>
+            </ul>
+        </div>
+        <div class="formulaire col-md-8 mt-5">
+            <div class="h2">Add a car</div>
+            <app-roket-car-data-form buttonText="Create car" (onSubmit)="onSubmit($event)"></app-roket-car-data-form>
+        </div>
+    </div>
+</div>
